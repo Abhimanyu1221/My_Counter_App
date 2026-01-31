@@ -1,0 +1,15 @@
+name: React CI Pipeline
+on: [push] # The trigger
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Automated Tests
+        run: npm test -- --watchAll=false

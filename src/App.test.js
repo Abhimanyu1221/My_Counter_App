@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('checks if initial counter value is 0', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const counterElement = screen.getByTestId('count-value');
+  expect(counterElement.textContent).toBe("0");
 });
